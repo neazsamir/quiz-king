@@ -160,6 +160,8 @@ function createElem() {
   getEl(".options").addEventListener('click', (event) => {
     clearInterval(interval);
     if (event.target.tagName === 'BUTTON') {
+      getEl('#clockTick').pause()
+      getEl('#clockTick').currentTime = 0;
       if (questionNum + 1 >= amount) {
         nextBtn.innerText = 'Finish';
         getEl(".qLeft").innerText = 'Excellent 🎉';
